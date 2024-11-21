@@ -12,7 +12,7 @@ codeunit 50101 "CopilotJob"
     begin
         SetAzureOpenAIAuthorization(AzureOpenAI);
         SetParameters(AOAIChatCompletionParams);
-        AzureOpenAI.SetCopilotCapability(Enum::"Copilot Capability"::"Test");
+        AzureOpenAI.SetCopilotCapability(Enum::"Copilot Capability"::"Copilot Playground");
         IsolatedStorage.Get('DescribeJobMetaprompt', Metaprompt);
         if AOAIToken.GetGPT35TokenCount(Metaprompt) + AOAIToken.GetGPT35TokenCount(Prompt) <= 1596 then begin // assuming GPT3.5 model
             AOAIChatMessages.SetPrimarySystemMessage(Metaprompt);

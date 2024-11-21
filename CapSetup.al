@@ -14,12 +14,12 @@ codeunit 50100 "Secrets And Capabilities Setup"
     var
         EnvironmentInfo: Codeunit "Environment Information";
         CopilotCapability: Codeunit "Copilot Capability";
-        LearnMoreUrlTxt: Label 'https://example.com/DraftaJob', Locked = true;
+        LearnMoreUrlTxt: Label 'https://tinyurl.com/yk58eyb5', Locked = true;
     begin
         if EnvironmentInfo.IsSaaSInfrastructure() then
-            if not CopilotCapability.IsCapabilityRegistered(Enum::"Copilot Capability"::Test) then
+            if not CopilotCapability.IsCapabilityRegistered(Enum::"Copilot Capability"::"Copilot Playground") then
                 CopilotCapability.RegisterCapability(
-                      Enum::"Copilot Capability"::Test,
+                      Enum::"Copilot Capability"::"Copilot Playground",
                       Enum::"Copilot Availability"::"Generally Available", LearnMoreUrlTxt);
     end;
 }

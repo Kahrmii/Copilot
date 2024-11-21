@@ -1,7 +1,7 @@
 enumextension 50100 "Copilot Capability Extension" extends "Copilot Capability"
 {
-    value(54300; "Test")
+    value(54300; "Copilot Playground")
     {
-        Caption = 'Test';
+        Caption = 'Copilot Playground';
     }
 }
