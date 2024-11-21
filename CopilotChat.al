@@ -32,18 +32,9 @@ page 50100 "Copilot Chat"
 
                 trigger OnAction()
                 var
-                    AzureOpenAI: Codeunit "Azure OpenAI";
-                    ChatMessages: Codeunit "AOAI Chat Messages";
-                    ChatCompletionParams: Codeunit "AOAI Chat Completion Params";
-                    OperationResponse: Codeunit "AOAI Operation Response";
-                    GeneratedText: Text;
+                    CopilotJob: Codeunit "CopilotJob";
                 begin
-                    ChatMessages.AddUserMessage(UserPrompt);
-                    ChatCompletionParams.SetMaxTokens(100);
-                    AzureOpenAI.GenerateChatCompletion(ChatMessages, ChatCompletionParams, OperationResponse);
-                    GeneratedText := OperationResponse.GetResult();
-
-                    Message('Generated Text: %1', GeneratedText);
+                    CopilotJob.Generate(UserPrompt);
                 end;
             }
         }
