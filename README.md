@@ -1,2 +1,2 @@
 # Copilot
-Playing with the "new" AL features in Business Central.
+Playing with the "new" AI features in Business Central.
