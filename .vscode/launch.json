@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Aaron",
+             "type": "al",
+             "request": "launch",
+             "tenant": "81698732-af57-401c-a7f1-49de3f7af692",
+             "environmentType": "Sandbox",
+             "environmentName": "Copilot2",
+             "startupObjectId": 50100,
+             "startupObjectType": "Page",
+             "breakOnError": true,
+             "breakOnRecordWrite": false,
+             "launchBrowser": true,
+             "enableSqlInformationDebugger": true,
+             "enableLongRunningSqlStatements": true,
+             "longRunningSqlStatementsThreshold": 500,
+             "numberOfSqlStatements": 10,
+             "schemaUpdateMode": "ForceSync"
+        }
+    ]
+}
