@@ -34,12 +34,8 @@ codeunit 50101 "CopilotJob"
     var
         Endpoint: Text;
         Deployment: Text;
-        Apikey: SecretText;
+        Apikey: SecretText; // need Azure OpenAI API key
     begin
-        IsolatedStorage.Get('Endpoint', Endpoint);
-        IsolatedStorage.Get('Deployment', Deployment);
-        IsolatedStorage.Get('Apikey', Apikey);
-
         AzureOpenAI.SetAuthorization(Enum::"AOAI Model Type"::"Chat Completions", Endpoint, Deployment, Apikey);
     end;
 }
