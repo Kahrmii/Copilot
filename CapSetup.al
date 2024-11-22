@@ -6,8 +6,11 @@ codeunit 50100 "Secrets And Capabilities Setup"
     Access = Internal;
 
     trigger OnInstallAppPerDatabase()
+    var
+    // SetupStorage: Codeunit "Setup Isolated Storage";
     begin
         RegisterCapability();
+        // SetupStorage.StoreData();
     end;
 
     local procedure RegisterCapability()

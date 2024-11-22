@@ -1,6 +1,7 @@
 page 50101 "Prompt Dialog"
 {
     PageType = PromptDialog;
+    UsageCategory = Administration;
     Extensible = false;
     ApplicationArea = All;
     Caption = 'Prompt Dialog';

@@ -9,12 +9,18 @@ codeunit 50101 "CopilotJob"
         AOAIToken: Codeunit "AOAI Token";
         Metaprompt: Text;
         Result: Text;
+        defaultMetaprompt: Text;
     begin
         SetAzureOpenAIAuthorization(AzureOpenAI);
         SetParameters(AOAIChatCompletionParams);
         AzureOpenAI.SetCopilotCapability(Enum::"Copilot Capability"::"Copilot Playground");
-        IsolatedStorage.Get('DescribeJobMetaprompt', Metaprompt);
-        if AOAIToken.GetGPT35TokenCount(Metaprompt) + AOAIToken.GetGPT35TokenCount(Prompt) <= 1596 then begin // assuming GPT3.5 model
+
+        defaultMetaprompt := ''; //TODO need default metaprompt
+
+        if not IsolatedStorage.Get('DescribeJobMetaprompt', Metaprompt) then
+            Metaprompt := defaultMetaprompt;
+
+        if AOAIToken.GetGPT35TokenCount(Metaprompt) + AOAIToken.GetGPT35TokenCount(Prompt) <= 1596 then begin
             AOAIChatMessages.SetPrimarySystemMessage(Metaprompt);
             AOAIChatMessages.AddUserMessage(Prompt);
             AzureOpenAI.GenerateChatCompletion(AOAIChatMessages, AOAIChatCompletionParams, AOAIOperationResponse);
@@ -34,7 +40,7 @@ codeunit 50101 "CopilotJob"
     var
         Endpoint: Text;
         Deployment: Text;
-        Apikey: SecretText; // need Azure OpenAI API key
+        Apikey: SecretText; //TODO need Azure OpenAI API key
     begin
         AzureOpenAI.SetAuthorization(Enum::"AOAI Model Type"::"Chat Completions", Endpoint, Deployment, Apikey);
     end;
