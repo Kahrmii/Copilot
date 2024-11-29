@@ -20,7 +20,7 @@ codeunit 50101 "CopilotJob"
         SetParameters(AOAIChatCompletionParams);
         AzureOpenAI.SetCopilotCapability(Enum::"Copilot Capability"::"Copilot Playground");
 
-        defaultMetaprompt := ''; //TODO need default metaprompt
+        defaultMetaprompt := 'Bitte beantworte die folgende Anfrage so detailliert und genau wie möglich.'; //assuming language: German
 
         if not IsolatedStorage.Get('DescribeJobMetaprompt', Metaprompt) then
             Metaprompt := defaultMetaprompt;
