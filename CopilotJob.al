@@ -1,5 +1,10 @@
 codeunit 50101 "CopilotJob"
 {
+    /// <summary>
+    /// Generates a response based on the provided prompt using Azure OpenAI services.
+    /// </summary>
+    /// <param name="Prompt">The user input text to generate a response for.</param>
+    /// <returns>The generated response text.</returns>
     procedure Generate(Prompt: Text): Text
     var
         AzureOpenAI: Codeunit "Azure OpenAI";

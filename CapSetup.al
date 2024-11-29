@@ -15,9 +15,9 @@ codeunit 50100 "Secrets And Capabilities Setup"
 
     local procedure RegisterCapability()
     var
-        EnvironmentInfo: Codeunit "Environment Information";
         CopilotCapability: Codeunit "Copilot Capability";
         LearnMoreUrlTxt: Label 'https://tinyurl.com/yk58eyb5', Locked = true;
+        EnvironmentInfo: Codeunit "Environment Information";
     begin
         if EnvironmentInfo.IsSaaSInfrastructure() then
             if not CopilotCapability.IsCapabilityRegistered(Enum::"Copilot Capability"::"Copilot Playground") then
