@@ -1,1 +1,2 @@
+Der APIKey muss sicher gespeichertz werden (siehe TODO isolated storage && TODO need Azure OpenAI API key)
 Die einzustellende App muss die Einstellungen als copilot capability registrieren.

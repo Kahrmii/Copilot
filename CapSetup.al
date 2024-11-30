@@ -7,7 +7,7 @@ codeunit 50100 "Secrets And Capabilities Setup"
 
     trigger OnInstallAppPerDatabase()
     var
-    // SetupStorage: Codeunit "Setup Isolated Storage";
+    // SetupStorage: Codeunit "Setup Isolated Storage"; //TODO isolated storage
     begin
         RegisterCapability();
         // SetupStorage.StoreData();
